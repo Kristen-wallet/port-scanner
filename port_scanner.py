@@ -1,8 +1,9 @@
 import socket
 
 sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-host = "192.168.1.69"
-port = 443
+socket.setdefaulttimeout(2)
+host = input("(*)Enter Host ip: ")
+port = int(input("(*)Enter Port: "))
 
 def port_scanner(port):
     if sock.connect_ex((host,port)):
