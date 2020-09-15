@@ -6,7 +6,7 @@ from threading import *
 def connScan(tgtHost , tgtPort):
     try:
         sock = socket(AF_INET , SOCK_STREAM)
-        sock.connect(tgtHost,tgtPort)
+        sock.connect_ex((tgtHost,tgtPort))
         print("[+] %d/tcp Opened" %tgtPort)
     except:
         print("[-] %d/tcp Closed" %tgtPort)
